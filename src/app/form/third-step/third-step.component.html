@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+  
+  <mat-card *ngFor="let group of form.get('orders').controls">
+    <order [form]="group"></order>
+  </mat-card>
+  <button type="button" mat-button (click)="addNewOrder()">Add new</button>
+  <div>
+    <button mat-button matStepperPrevious>Back</button>
+  </div>
+  
+</form>

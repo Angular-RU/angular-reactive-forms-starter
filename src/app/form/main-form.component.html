@@ -1,0 +1,19 @@
+<form [formGroup]="form" *ngIf="form" (submit)="onSubmit()">
+  <mat-horizontal-stepper linear="false" #stepper>
+    <mat-step label="Rules">
+      <first-step [form]="form.get('firstStep')"></first-step>
+    </mat-step>
+    <mat-step label="Information about you">
+      <second-step [form]="form.get('secondStep')"></second-step>
+    </mat-step>
+    <mat-step label="My orders">
+      <third-step [form]="form.get('thirdStep')"></third-step>
+      <button mat-button >Submit</button>
+    </mat-step>
+  </mat-horizontal-stepper>  
+</form>
+
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

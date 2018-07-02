@@ -1,0 +1,9 @@
+<form [formGroup]="form" *ngIf="form">
+  <mat-form-field><input matInput placeholder="First Name" formControlName="firstName"></mat-form-field>
+  <mat-form-field><input matInput placeholder="Second Name" formControlName="secondName"></mat-form-field>
+  
+  <div>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button>
+  </div>
+</form>
