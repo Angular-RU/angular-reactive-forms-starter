@@ -1,28 +1,32 @@
-# angular-reactive-forms-starter
+# Angular Reactive Forms Starter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1.
+## Installation
+For angular 6:
+```bash
+$ git clone https://github.com/Angular-RU/angular-reactive-forms-starter.git
+$ cd angular-reactive-forms-starter
+$ npm i
+$ npm start
+```
 
-## Development server
+## Description
+![](https://pp.userapi.com/c849336/v849336677/1bfc3/GrzAWrMLeS8.jpg)
+### You have:
+1. `MainComponent` - Component at the top of the form.
+2. `FormService` - Service, you can use for parsing or converting `Model`<=>`Form`
+3. `NestedComponents` - Dummy components. Their main mission is to bind form controls to elements in the template. If needed you can inject `FormsService` and use it to generate new `FormGroup` in `FormArray` etc.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Principles
+1. `NestedComponents` **must** be stupid! Only some validators declatations, subscribtions on changing, without strong logic
+2. You should cover `FormsService` with unit tests.
+3. You can move some transformation parts from `FormsService` to more convinient places. 
+> *For example*: 
+> 
+> Transformation logic, related to `ThirdStepComponent` can be in `ThirdStepService` in same folder.
 
-## Code scaffolding
+## Things to do:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+We want to create transforming package, which will be able convert json directly to form and visa versa. 
 
-## Build
+Without any middle form<->model and model<->json,  transformations
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
